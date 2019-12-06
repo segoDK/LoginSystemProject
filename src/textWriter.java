@@ -29,7 +29,7 @@ public class textWriter {
             textReader usernameRead = new textReader(path);
             String[] aryLines = usernameRead.OpenFile();
             for (String aryLine : aryLines) {
-                System.out.println(aryLine);
+                //System.out.println(aryLine);
                 if (aryLine.equals(testFor)) {
                     dupeTest = false;
                 }
