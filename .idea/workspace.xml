@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ee4cc3e0-9a18-4603-98b9-21709779d7bc" name="Default Changelist" comment="" />
+    <list default="true" id="cd84d820-0a20-41d8-8279-9e723a737f8f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/UserAdmin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UserBasic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/textReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/textWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LoginSystemProject/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LoginSystemProject/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LoginSystemProject/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +63,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ee4cc3e0-9a18-4603-98b9-21709779d7bc" name="Default Changelist" comment="" />
+      <changelist id="cd84d820-0a20-41d8-8279-9e723a737f8f" name="Default Changelist" comment="" />
       <created>1574238843170</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -66,7 +76,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
