@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd84d820-0a20-41d8-8279-9e723a737f8f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Data.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/passwords.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Files/passwords.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/usernames.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Files/usernames.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LoginSystemProject/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LoginSystemProject/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LoginSystemProject/textWriter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LoginSystemProject/textWriter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/textWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/textWriter.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
