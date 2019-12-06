@@ -15,8 +15,8 @@ public class Screen {
     private JLabel userNameLabel;
     private JLabel passwordLabel;
 
-    private static JFrame frame = new JFrame("FirstForm");
-    private static JFrame loginFrame = new JFrame("LoginFrame");
+    private static JFrame loginFrame = new JFrame("Login Frame");
+    private static JFrame nextFrame = new JFrame("Next Frame");
     private static JFrame failedLoginFrame = new JFrame("FailedLoginFrame");
 
     private final static String newline = "\n";
@@ -53,18 +53,18 @@ public class Screen {
 
 
     public static void setup(){
-        // input information frame
-        frame.setSize(new Dimension(360, 320));
-        frame.setContentPane(new Screen().panelMain);
-        //frame.setLayout(new FlowLayout());
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //frame.pack();
-        frame.setVisible(true);
+        // input information loginFrame
+        loginFrame.setSize(new Dimension(360, 320));
+        loginFrame.setContentPane(new Screen().panelMain);
+        //loginFrame.setLayout(new FlowLayout());
+        loginFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //loginFrame.pack();
+        loginFrame.setVisible(true);
 
         // Succecful login frame
-        loginFrame.setSize(new Dimension(360, 320));
-        loginFrame.setContentPane(new Screen().panelMain); // CONTENT SHALL BE CHANGED
-        loginFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        nextFrame.setSize(new Dimension(360, 320));
+        nextFrame.setContentPane(new Screen().panelMain); // CONTENT SHALL BE CHANGED
+        nextFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // failed login frame
         failedLoginFrame.setSize(new Dimension(360, 320));
@@ -73,8 +73,8 @@ public class Screen {
     }
 
     public static void showLogin(String inputUsername){
-        frame.setVisible(false);
-        loginFrame.setVisible(true);
+        loginFrame.setVisible(false);
+        nextFrame.setVisible(true);
     }
 
     public static void showFailedLogin(){
