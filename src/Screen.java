@@ -3,8 +3,10 @@ import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
 import java.awt.print.Book;
 import java.awt.Color;
+import java.io.IOException;
 
 public class Screen {
     private JTextField userNameField;
@@ -36,17 +38,27 @@ public class Screen {
         userNameField.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                username = userNameField.getText();
-                //userNameField.selectAll();
+                // if 'enter' is pressed, go to passwordField
+                passwordField.requestFocus();
             }
         });
         passwordField.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                passwordField.selectAll();
-                password = passwordField.getSelectedText();
-
+                // if 'enter' is pressed and both fields are filled out, test if inputs are correct
+                if(!userNameField.getText().equals("") && !passwordField.getText().equals("")){
+                    testInput();
+                }
             }
+        });
+        loginButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // if 'enter' is pressed, test if inputs are correct
+                testInput();
+            }
+        });
+        userNameField.addKeyListener(new KeyAdapter() {
         });
     }
 
@@ -72,14 +84,33 @@ public class Screen {
         failedLoginFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    public static void showLogin(String inputUsername){
+    private void testInput(){
+        Data data = new Data();
+        username = userNameField.getText();
+        password = passwordField.getText();
+        try {
+            if(data.testLogin(username, password, data.getUsernamePath(), data.getPasswordPath())){
+                correctLogin(username);
+            }
+            else{
+                showFailedLogin();
+            }
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public static void correctLogin(String inputUsername){
         loginFrame.setVisible(false);
         nextFrame.setVisible(true);
+        JOptionPane.showMessageDialog(null, "Welcome " + username);
     }
 
     public static void showFailedLogin(){
-
+        JOptionPane.showMessageDialog(null, "Wrong username or password \n Please try again");
     }
+
 
 
 }

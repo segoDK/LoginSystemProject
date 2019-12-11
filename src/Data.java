@@ -6,8 +6,10 @@ import java.util.Base64;
 
 public class Data {
 
+    private String username_path ="Files/usernames.txt";
+    private String password_path ="Files/passwords.txt";
+
     public void saveUsername(String userName) throws IOException {
-        String username_path ="Files/usernames.txt";
         textWriter writer = new textWriter(username_path, true);
         if(writer.checkDupe(userName)){
             writer.writeToFile(userName);
@@ -18,7 +20,6 @@ public class Data {
     }
 
     public void savePassword(String newpass) throws IOException, NoSuchAlgorithmException {
-        String password_path ="Files/passwords.txt";
         textWriter writer = new textWriter(password_path, true);
         MessageDigest md = MessageDigest.getInstance("SHA-512");
 
@@ -55,26 +56,29 @@ public class Data {
                     return i;
                 }
             }
-            return 0;
+            return -1;
 
         } catch (IOException e) {
             System.out.println("TextReader Error");
             e.printStackTrace();
-            return 0;
+            return -1;
         }
     }
 
 
     public boolean testForPass(String pass, int line, String file_path){
         try{
-            textReader usernameRead = new textReader(file_path);
-            String[] aryLines = usernameRead.OpenFile();
-
-            MessageDigest md = MessageDigest.getInstance("SHA-512");
-            byte[] hashedPassword = md.digest(pass.getBytes(StandardCharsets.UTF_8));
-            String passHash = Base64.getEncoder().encodeToString(hashedPassword);
-            return (aryLines[line]).equals(passHash);
-
+            if(line!=-1) {
+                textReader usernameRead = new textReader(file_path);
+                String[] aryLines = usernameRead.OpenFile();
+                //System.out.println(line);
+                MessageDigest md = MessageDigest.getInstance("SHA-512");
+                byte[] hashedPassword = md.digest(pass.getBytes(StandardCharsets.UTF_8));
+                String passHash = Base64.getEncoder().encodeToString(hashedPassword);
+                return (aryLines[line]).equals(passHash);
+            } else {
+                return false;
+            }
 
         } catch (IOException | NoSuchAlgorithmException e) {
             System.out.println("TextReader Error");
@@ -89,5 +93,18 @@ public class Data {
         return testForPass(pass,line,pass_path);
     }
 
+    // setters and getters
+    public void setUsernamePath(String pathInput){
+        username_path = pathInput;
+    }
+    public void setPasswordPath(String pathInput){
+        password_path = pathInput;
+    }
+    public String getUsernamePath(){
+        return(username_path);
+    }
+    public String getPasswordPath(){
+        return(password_path);
+    }
 
 }
